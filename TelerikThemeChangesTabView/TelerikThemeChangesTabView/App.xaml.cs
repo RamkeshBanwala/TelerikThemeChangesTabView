@@ -1,8 +1,7 @@
-﻿using System;
-using TelerikThemeChangesTabView.Services;
-using TelerikThemeChangesTabView.Views;
+﻿using FreshMvvm;
+using Sample.Mapper;
+using TelerikThemeChangesTabView.ViewModels;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace TelerikThemeChangesTabView
 {
@@ -13,8 +12,12 @@ namespace TelerikThemeChangesTabView
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
-            MainPage = new AppShell();
+            FreshPageModelResolver.PageModelMapper = new SampleFreshPageModelMapper();
+            var tabbedNavigation = new FreshTabbedNavigationContainer();
+            tabbedNavigation.AddTab<AboutViewModel>("About", "calendar.png");
+            tabbedNavigation.AddTab<LoginViewModel>("Log IN", "calendar.png");
+            tabbedNavigation.AddTab<EditorSamplesViewModel>("Editor Sample", "calendar.png");
+            App.Current.MainPage = tabbedNavigation;
         }
 
         protected override void OnStart()

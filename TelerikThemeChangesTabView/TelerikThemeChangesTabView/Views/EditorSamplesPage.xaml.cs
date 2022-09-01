@@ -11,20 +11,16 @@ using Xamarin.Forms.Xaml;
 namespace TelerikThemeChangesTabView.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class EditorSamples : ContentPage
+    public partial class EditorSamplesPage : ContentPage
     {
-        public EditorSamples()
+        public EditorSamplesPage()
         {
             InitializeComponent();
         }
 
         protected override void OnAppearing()
         {
-            //var detailForm = new RadDataForm
-            //{
-            //    Source = new DailyLogSummary(),
-            //    PropertyDataSourceProvider = new ReasonList()
-            //};
+
             detailForm.Source = new DailyLogSummary();
             detailForm.PropertyDataSourceProvider = new ReasonList();
             detailForm.RegisterEditor(nameof(DailyLogSummary.WasInjured), EditorType.ToggleButtonEditor);

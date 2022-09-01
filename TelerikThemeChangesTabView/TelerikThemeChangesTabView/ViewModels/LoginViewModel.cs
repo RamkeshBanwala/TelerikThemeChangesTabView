@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using FreshMvvm;
 using TelerikThemeChangesTabView.Views;
 using Xamarin.Forms;
 
 namespace TelerikThemeChangesTabView.ViewModels
 {
-    public class LoginViewModel : BaseViewModel
+    public class LoginViewModel : FreshBasePageModel
     {
         public Command LoginCommand { get; }
 

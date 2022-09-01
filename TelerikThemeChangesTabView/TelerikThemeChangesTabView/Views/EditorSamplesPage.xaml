@@ -4,7 +4,7 @@
              xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input" 
              xmlns:telerikDataForm="clr-namespace:Telerik.XamarinForms.Input.DataForm;assembly=Telerik.XamarinForms.Input" 
              xmlns:telerikCommon="clr-namespace:Telerik.XamarinForms.Common;assembly=Telerik.XamarinForms.Common"
-             x:Class="TelerikThemeChangesTabView.Views.EditorSamples">
+             x:Class="TelerikThemeChangesTabView.Views.EditorSamplesPage">
     <ContentPage.Content>
         <StackLayout>
             <telerikInput:RadDataForm Source="{Binding DailyLogSummary}" x:Name="detailForm" ValidationMode="OnLostFocus" >

@@ -7,7 +7,7 @@
              Title="{Binding Title}">
 
     <ContentPage.Content>
-        <telerikPrimitives:RadTabView x:Name="tabView" StyleClass="TelerikTheme">
+        <!--<telerikPrimitives:RadTabView x:Name="tabView" StyleClass="TelerikTheme">
             <telerikPrimitives:RadTabView.Items>
                 <telerikPrimitives:TabViewItem HeaderText="Home" >
                     <telerikPrimitives:TabViewItem.Header>
@@ -40,7 +40,10 @@
                     </telerikPrimitives:TabViewItem.Content>
                 </telerikPrimitives:TabViewItem>
             </telerikPrimitives:RadTabView.Items>
-        </telerikPrimitives:RadTabView>
+        </telerikPrimitives:RadTabView>-->
+        <StackLayout>
+            <Button Text="Go To Editor Sample Page" Clicked="Button_Clicked" ></Button>
+        </StackLayout>
     </ContentPage.Content>
 
 </ContentPage>
