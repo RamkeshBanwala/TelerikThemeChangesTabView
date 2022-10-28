@@ -4,45 +4,56 @@
              x:Class="TelerikThemeChangesTabView.Views.AboutPage"
              xmlns:vm="clr-namespace:TelerikThemeChangesTabView.ViewModels" 
              xmlns:telerikPrimitives="clr-namespace:Telerik.XamarinForms.Primitives;assembly=Telerik.XamarinForms.Primitives"
-             Title="{Binding Title}">
-
+             xmlns:telerikDataControls="clr-namespace:Telerik.XamarinForms.DataControls;assembly=Telerik.XamarinForms.DataControls" 
+             xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input" >
     <ContentPage.Content>
-        <!--<telerikPrimitives:RadTabView x:Name="tabView" StyleClass="TelerikTheme">
-            <telerikPrimitives:RadTabView.Items>
-                <telerikPrimitives:TabViewItem HeaderText="Home" >
-                    <telerikPrimitives:TabViewItem.Header>
-                        <telerikPrimitives:TabViewHeaderItem Text="Home"  FontSize="16"
-                                                                 TextColor="{AppThemeBinding Dark={StaticResource TextColorWhite}, Light={StaticResource WindowBackgroundColorDark}}"
-                                                                 SelectedColor="{AppThemeBinding Dark={StaticResource TextColorWhite}, Light={StaticResource SystemBlue}}" />
-                    </telerikPrimitives:TabViewItem.Header>
-                    <telerikPrimitives:TabViewItem.Content>
-                        <Label Margin="10" Text="This is the content of the Home tab" />
-                    </telerikPrimitives:TabViewItem.Content>
-                </telerikPrimitives:TabViewItem>
-                <telerikPrimitives:TabViewItem HeaderText="Folder">
-                    <telerikPrimitives:TabViewItem.Header>
-                        <telerikPrimitives:TabViewHeaderItem Text="Folder"  FontSize="16"
-                                                                 TextColor="{AppThemeBinding Dark={StaticResource TextColorWhite}, Light={StaticResource WindowBackgroundColorDark}}"
-                                                                 SelectedColor="{AppThemeBinding Dark={StaticResource TextColorWhite}, Light={StaticResource SystemBlue}}" />
-                    </telerikPrimitives:TabViewItem.Header>
-                    <telerikPrimitives:TabViewItem.Content>
-                        <Label Margin="10" Text="This is the content of the Folder tab" />
-                    </telerikPrimitives:TabViewItem.Content>
-                </telerikPrimitives:TabViewItem>
-                <telerikPrimitives:TabViewItem HeaderText="View">
-                    <telerikPrimitives:TabViewItem.Header>
-                        <telerikPrimitives:TabViewHeaderItem Text="View"  FontSize="16"
-                                                                 TextColor="{AppThemeBinding Dark={StaticResource TextColorWhite}, Light={StaticResource WindowBackgroundColorDark}}"
-                                                                 SelectedColor="{AppThemeBinding Dark={StaticResource TextColorWhite}, Light={StaticResource SystemBlue}}" />
-                    </telerikPrimitives:TabViewItem.Header>
-                    <telerikPrimitives:TabViewItem.Content>
-                        <Label Margin="10" Text="This is the content of the View tab" />
-                    </telerikPrimitives:TabViewItem.Content>
-                </telerikPrimitives:TabViewItem>
-            </telerikPrimitives:RadTabView.Items>
-        </telerikPrimitives:RadTabView>-->
-        <StackLayout>
-            <Button Text="Go To Editor Sample Page" Clicked="Button_Clicked" ></Button>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <telerikPrimitives:RadPopup.Popup>
+                <telerikPrimitives:RadPopup x:Name="popupBeltsAndFilters" IsModal="True"  IsOpen="True"  Placement="Center">
+                    <telerikPrimitives:RadBorder CornerRadius="6" HeightRequest="300" WidthRequest="300"
+                                    Padding="10" x:Name="radBorderItem">
+                        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                            <StackLayout VerticalOptions="StartAndExpand" Padding="0,10,0,0" Margin="10,40,10,40">
+                                <telerikInput:RadComboBox Grid.Row="0" Grid.Column="1" x:Name="comboBoxSearchItems" Grid.ColumnSpan="2" 
+                                                                  ItemsSource="{Binding SearchItems}" 
+                                                                  DisplayMemberPath="Name" />
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Column="0" Grid.Row="0" Margin="0,20,0,0" Text="Quantity"
+                                           HorizontalOptions="Center" VerticalOptions="Center" />
+
+
+                                </Grid>
+                            </StackLayout>
+                            <StackLayout VerticalOptions="EndAndExpand">
+                                <Grid ColumnSpacing="0" x:Name="controlButtonsModalSearch" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <telerikInput:RadButton x:Name="leftButtonModalSearch" Grid.Column="0" 
+                                                                        HorizontalOptions="FillAndExpand" 
+                                                                        VerticalOptions="CenterAndExpand" Padding="10,0,10,0" Text="Cancel" />
+
+                                    <telerikInput:RadButton x:Name="rightButtonModalSearch" Grid.Column="1" HorizontalOptions="FillAndExpand" 
+                                                                        VerticalOptions="CenterAndExpand" Padding="10,0,10,0" Text="Ok"  />
+                                </Grid>
+                            </StackLayout>
+                        </StackLayout>
+                    </telerikPrimitives:RadBorder>
+                </telerikPrimitives:RadPopup>
+            </telerikPrimitives:RadPopup.Popup>
         </StackLayout>
     </ContentPage.Content>
 
